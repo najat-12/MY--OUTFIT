@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY OUTFIT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h1>MY OUTFIT</h1>
+        <p>YOUR PERSONAL AI STYLIST</p>
+
+        <nav>
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('wardrobe')">My Wardrobe</button>
+            <button onclick="showPage('generator')">Outfit Generator</button>
+            <button onclick="showPage('tryon')">Virtual Try-On</button>
+            <button onclick="showPage('chat')">AI Stylist Chat</button>
+            <button onclick="showPage('favorites')">Favorites</button>
+            <button onclick="showPage('profile')">Profile & Settings</button>
+        </nav>
+    </aside>
+
+    <main>
+        <section id="home" class="page">
+            <h2>Welcome to MY OUTFIT</h2>
+            <h3>Your Wardrobe. Your Style.</h3>
+            <p>Your personal AI fashion stylist.</p>
+            <button onclick="showPage('generator')">Dress Me Today</button>
+        </section>
+
+        <section id="wardrobe" class="page hidden">
+            <h2>My Digital Wardrobe</h2>
+            <input type="file" id="clothingPhoto" accept="image/*">
+            <input type="text" id="clothingName" placeholder="Clothing name">
+            <select id="clothingCategory">
+                <option>Tops</option>
+                <option>Bottoms</option>
+                <option>Dresses & Jumpsuits</option>
+                <option>Outerwear</option>
+                <option>Shoes</option>
+                <option>Bags</option>
+                <option>Accessories</option>
+            </select>
+            <button onclick="addClothing()">Add Item</button>
+            <div id="wardrobeItems"></div>
+        </section>
+
+        <section id="generator" class="page hidden">
+            <h2>AI Outfit Generator</h2>
+            <select id="occasion">
+                <option>Everyday</option>
+                <option>Work</option>
+                <option>University</option>
+                <option>Party</option>
+                <option>Date</option>
+                <option>Formal Event</option>
+            </select>
+            <button onclick="generateOutfit()">Generate Outfit</button>
+            <div id="outfitResult"></div>
+        </section>
+
+        <section id="tryon" class="page hidden">
+            <h2>Virtual Try-On</h2>
+            <p>Upload a reference photo to prepare your virtual try-on.</p>
+            <input type="file" accept="image/*" id="tryOnPhoto">
+            <div id="tryOnPreview"></div>
+        </section>
+
+        <section id="chat" class="page hidden">
+            <h2>AI Fashion Chat</h2>
+            <div id="chatMessages"></div>
+            <input id="chatInput" placeholder="Ask your stylist...">
+            <button onclick="sendMessage()">Send</button>
+        </section>
+
+        <section id="favorites" class="page hidden">
+            <h2>My Favorite Outfits</h2>
+            <div id="favoriteItems"></div>
+        </section>
+
+        <section id="profile" class="page hidden">
+            <h2>My Profile</h2>
+            <input id="userName" placeholder="Your name">
+            <select id="gender">
+                <option>Women</option>
+                <option>Men</option>
+            </select>
+            <input type="date" id="birthDate">
+            <select id="userLanguage">
+                <option>English</option>
+                <option>Arabic</option>
+                <option>French</option>
+                <option>Spanish</option>
+                <option>German</option>
+                <option>Turkish</option>
+            </select>
+            <button onclick="saveProfile()">Save Profile</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
